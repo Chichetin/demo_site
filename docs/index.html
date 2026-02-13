@@ -3,23 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chicherin Alexander | Neurotech Portfolio</title>
+    <title>Chicherin Alexander | Neurotech Explorer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;800&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #0f172a;
-            --card-bg: #1e293b;
-            --text-main: #f8fafc;
-            --text-dim: #94a3b8;
-            --accent: #38bdf8;
+            --bg: #0a0a0c;
+            --accent-1: #ff3e00;
+            --accent-2: #7000ff;
+            --text: #ffffff;
+            --glass: rgba(255, 255, 255, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Outfit', sans-serif;
             background-color: var(--bg);
-            color: var(--text-main);
+            color: var(--text);
+            overflow-x: hidden;
             line-height: 1.6;
-            margin: 0;
-            padding: 0;
+        }
+
+        /* Animated Background Shapes */
+        .blob {
+            position: fixed;
+            z-index: -1;
+            filter: blur(80px);
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: move 20s infinite alternate;
+        }
+
+        .blob-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--accent-1);
+            top: -100px;
+            right: -100px;
+        }
+
+        .blob-2 {
+            width: 500px;
+            height: 500px;
+            background: var(--accent-2);
+            bottom: -150px;
+            left: -150px;
+            animation-delay: -5s;
+        }
+
+        @keyframes move {
+            from { transform: translate(0, 0) scale(1); }
+            to { transform: translate(100px, 100px) scale(1.2); }
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
 
         header {
@@ -27,103 +74,128 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            align-items: flex-start;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
+        h1 {
+            font-size: clamp(3rem, 10vw, 6rem);
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 800;
+            line-height: 0.9;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #fff, var(--accent-1));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        h1 { font-size: 3rem; margin-bottom: 0.5rem; color: var(--accent); }
-        h2 { font-size: 1.5rem; color: var(--text-dim); font-weight: 300; }
-        h3 { border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem; display: inline-block; }
+        .tagline {
+            font-size: 1.5rem;
+            font-weight: 300;
+            border-left: 4px solid var(--accent-1);
+            padding-left: 1rem;
+            margin-bottom: 2rem;
+        }
 
-        .section { margin: 4rem 0; }
+        /* Bento Grid Design */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 5rem;
+        }
 
         .card {
-            background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            border-left: 4px solid var(--accent);
-        }
-
-        .tag {
-            display: inline-block;
-            background: #0ea5e9;
-            color: white;
-            padding: 0.2rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-right: 0.5rem;
-        }
-
-        footer {
-            text-align: center;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 2rem;
-            color: var(--text-dim);
+            border-radius: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-1);
+        }
+
+        .span-2 { grid-column: span 2; }
+
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent-1);
+        }
+
+        .skill-pill {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50px;
+            margin: 0.3rem;
             font-size: 0.9rem;
         }
 
-        a { color: var(--accent); text-decoration: none; }
-        a:hover { text-decoration: underline; }
+        footer {
+            padding: 4rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.6;
+        }
+
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+            .span-2 { grid-column: span 1; }
+        }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Chicherin Alexander</h1>
-    <h2>Neurotechnology Student @ ITMO University</h2>
-    <p>Exploring the intersection of Brain Science and Artificial Intelligence.</p>
-</header>
+<div class="blob blob-1"></div>
+<div class="blob blob-2"></div>
 
-<div class="container">
-
-    <section class="section">
-        <h3>About Me</h3>
-        <p>
-            Currently a first-year student at <strong>ITMO University</strong> in St. Petersburg, Russia.
-            My academic focus is on <strong>Neurotechnologies</strong>, where I am fascinated by Brain-Computer Interfaces (BCI),
-            neural signal processing, and the future of human-machine interaction.
-        </p>
-    </section>
-
-    <section class="section">
-        <h3>Education</h3>
+<main class="container">
+    <header>
+        <h1>CHICHERIN<br>ALEXANDER</h1>
+        <p class="tagline">Neurotechnology Student @ ITMO University</p>
         <div class="card">
-            <strong>B.S. in Neurotechnologies</strong><br>
-            ITMO University | 2023 - Present
-            <p>Relevant Coursework: Mathematics for Neurotech, Fundamentals of Programming, Anatomy of the Central Nervous System.</p>
+            <p>Decoding the interface between the human mind and digital systems. First-year student driven by the future of BCI and neural engineering.</p>
+        </div>
+    </header>
+
+    <section class="grid">
+        <div class="card span-2">
+            <h2>Education</h2>
+            <p><strong>ITMO University</strong>, St. Petersburg</p>
+            <p>Bachelor of Neurotechnologies (Year 1)</p>
+            <p style="margin-top: 1rem; opacity: 0.8;">Focused on computational neuroscience, bio-signals, and the intersection of biology and AI.</p>
+        </div>
+
+        <div class="card">
+            <h2>Interests</h2>
+            <div class="skill-pill">Brain-Computer Interface</div>
+            <div class="skill-pill">Neural Networks</div>
+            <div class="skill-pill">Bio-Sensing</div>
+            <div class="skill-pill">Cybernetics</div>
+        </div>
+
+        <div class="card">
+            <h2>Location</h2>
+            <p>Saint Petersburg, Russia</p>
+            <p style="font-size: 0.8rem; opacity: 0.5;">Available for research collaborations globally.</p>
+        </div>
+
+        <div class="card span-2">
+            <h2>The Vision</h2>
+            <p>"The next frontier isn't space—it's the 1.5kg of matter between our ears. I'm building my foundation at ITMO to help bridge the gap between biological thought and silicon execution."</p>
         </div>
     </section>
 
-    <section class="section">
-        <h3>Interests & Skills</h3>
-        <div>
-            <span class="tag">Neurobiology</span>
-            <span class="tag">Python</span>
-            <span class="tag">Data Analysis</span>
-            <span class="tag">BCI Systems</span>
-            <span class="tag">Machine Learning</span>
-        </div>
-    </section>
-
-    <section class="section">
-        <h3>Contact</h3>
-        <p>I am always open to discussing research opportunities or interesting projects.</p>
-        <p>Email: <a href="mailto:alexander@example.com">alexander@example.com</a></p>
-        <p>Location: St. Petersburg, Russia</p>
-    </section>
-
-</div>
-
-<footer>
-    &copy; 2024 Chicherin Alexander. Built with code and curiosity.
-</footer>
+    <footer>
+        <p>&copy; 2024 Chicherin Alexander. Built with code and curiosity.</p>
+    </footer>
+</main>
 
 </body>
 </html>
