@@ -1,11 +1,129 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Главная страница моего крутого сайта.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicherin Alexander | Neurotech Portfolio</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --accent: #38bdf8;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        h1 { font-size: 3rem; margin-bottom: 0.5rem; color: var(--accent); }
+        h2 { font-size: 1.5rem; color: var(--text-dim); font-weight: 300; }
+        h3 { border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem; display: inline-block; }
+
+        .section { margin: 4rem 0; }
+
+        .card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--accent);
+        }
+
+        .tag {
+            display: inline-block;
+            background: #0ea5e9;
+            color: white;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
 </head>
 <body>
-<h1>Текст моего сайтика. Чичерин.  А: Ч.А.П.</h1>
+
+<header>
+    <h1>Chicherin Alexander</h1>
+    <h2>Neurotechnology Student @ ITMO University</h2>
+    <p>Exploring the intersection of Brain Science and Artificial Intelligence.</p>
+</header>
+
+<div class="container">
+
+    <section class="section">
+        <h3>About Me</h3>
+        <p>
+            Currently a first-year student at <strong>ITMO University</strong> in St. Petersburg, Russia.
+            My academic focus is on <strong>Neurotechnologies</strong>, where I am fascinated by Brain-Computer Interfaces (BCI),
+            neural signal processing, and the future of human-machine interaction.
+        </p>
+    </section>
+
+    <section class="section">
+        <h3>Education</h3>
+        <div class="card">
+            <strong>B.S. in Neurotechnologies</strong><br>
+            ITMO University | 2023 - Present
+            <p>Relevant Coursework: Mathematics for Neurotech, Fundamentals of Programming, Anatomy of the Central Nervous System.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h3>Interests & Skills</h3>
+        <div>
+            <span class="tag">Neurobiology</span>
+            <span class="tag">Python</span>
+            <span class="tag">Data Analysis</span>
+            <span class="tag">BCI Systems</span>
+            <span class="tag">Machine Learning</span>
+        </div>
+    </section>
+
+    <section class="section">
+        <h3>Contact</h3>
+        <p>I am always open to discussing research opportunities or interesting projects.</p>
+        <p>Email: <a href="mailto:alexander@example.com">alexander@example.com</a></p>
+        <p>Location: St. Petersburg, Russia</p>
+    </section>
+
+</div>
+
+<footer>
+    &copy; 2024 Chicherin Alexander. Built with code and curiosity.
+</footer>
 
 </body>
 </html>
